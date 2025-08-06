@@ -44,8 +44,10 @@ def create_app():
 
     return app
 
+app = create_app()
+
 if __name__ == "__main__":
-    app = create_app()
     with app.app_context():
-        db.create_all()
+        if os.environ.get("RENDER") is None:  
+            db.create_all()
     app.run()

@@ -17,12 +17,13 @@ def send_todo_email(to_email, title, description):
     msg = Message(
         subject,
         recipients=[to_email],
-        sender="your_email@gmail.com"  # Must match MAIL_DEFAULT_SENDER in config
+        sender="sawanrawat2004@gmail.com"  
     )
     msg.html = html_content
 
     try:
         mail.send(msg)
+        print("✅ Email sent successfully.")
         return True
     except Exception as e:
         print(f"❌ Error sending email: {e}")

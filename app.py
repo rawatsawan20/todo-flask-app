@@ -7,7 +7,6 @@ from config import Config
 from db_ext import db, mail
 from jwt_callbacks import register_jwt_callbacks
 
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # Only for dev
 
 def create_app():
     app = Flask(__name__)
@@ -49,4 +48,4 @@ if __name__ == "__main__":
     app = create_app()
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run()

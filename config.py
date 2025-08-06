@@ -3,8 +3,6 @@ import os
 from dotenv import load_dotenv
 from datetime import timedelta
 
-
-# Load .env variables
 load_dotenv()
 
 class Config:
@@ -32,3 +30,5 @@ class Config:
     MAIL_USERNAME = os.getenv("MAIL_USERNAME")
     MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")
     MAIL_DEFAULT_SENDER = os.getenv("MAIL_DEFAULT_SENDER")
+    
+    REDIRECT_URL = os.getenv("FRONTEND_REDIRECT_URL", "http://localhost:5173")

@@ -8,10 +8,7 @@ load_dotenv()
 class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "mysecret")
     
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        "DATABASE_URL",
-        "postgresql+psycopg2://postgres:postgres@localhost:5432/todo_app"
-    )
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "jwtsecret")
